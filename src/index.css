@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-[#07070d] text-slate-100 font-sans antialiased;
+    background-image: radial-gradient(rgba(255,255,255,0.032) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  ::selection { background: rgba(139,92,246,0.4); color: #fff; }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #67e8f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Standard card */
+  .card-base {
+    @apply bg-white/[0.03] border border-white/[0.07] rounded-2xl;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .card-base:hover {
+    border-color: rgba(139,92,246,0.45);
+    box-shadow: 0 8px 50px rgba(139,92,246,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Glass card — more depth */
+  .card-glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    @apply border border-white/[0.09] rounded-2xl backdrop-blur-sm;
+    transition: all 0.25s;
+  }
+  .card-glass:hover {
+    border-color: rgba(139,92,246,0.5);
+    box-shadow: 0 12px 60px rgba(139,92,246,0.12);
+    transform: translateY(-3px);
+  }
+
+  .section-label {
+    @apply text-xs text-violet-400 font-mono uppercase tracking-widest mb-2 block;
+  }
+  .section-title {
+    @apply text-4xl md:text-5xl font-extrabold text-white;
+  }
+  .pill {
+    @apply text-xs font-mono px-3 py-1 rounded-full border bg-white/[0.04] text-slate-400 border-white/[0.08];
+  }
+}
+
+/* Gradient border ring */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin-angle { to { --angle: 360deg; } }
+.animated-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#07070d, #07070d) padding-box,
+    conic-gradient(from var(--angle), #7c3aed, #818cf8, #06b6d4, #a78bfa, #7c3aed) border-box;
+  animation: spin-angle 4s linear infinite;
+}
+
+/* Typewriter cursor */
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  background: #a78bfa;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.85s step-end infinite;
+}
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Avatar ring animations */
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 6s linear infinite; }
+@keyframes spin-slow-rev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+.spin-slow-rev { animation: spin-slow-rev 9s linear infinite; }
+
+/* Floating badges */
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.float { animation: float 3s ease-in-out infinite; }
+.float-delayed { animation: float 3s ease-in-out 1.5s infinite; }
+
+/* Glowing number text */
+.glow-violet { text-shadow: 0 0 30px rgba(167,139,250,0.5); }
+.glow-yellow { text-shadow: 0 0 30px rgba(240,165,0,0.4); }
+.glow-blue   { text-shadow: 0 0 30px rgba(96,165,250,0.4); }
+.glow-green  { text-shadow: 0 0 30px rgba(74,222,128,0.4); }
