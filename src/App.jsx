@@ -40,14 +40,14 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Portfolio fades in */}
+      {/* Portfolio slides in from right */}
       <AnimatePresence>
         {loaded && (
           <motion.div
             key="main"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <ScrollProgress />
             <Navbar />
