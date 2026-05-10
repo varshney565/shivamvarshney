@@ -38,8 +38,8 @@ const BADGES = [
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center px-6 pt-28 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
+    <section id="hero" className="relative min-h-screen flex items-center px-6 pt-28">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[700px] h-[700px] rounded-full bg-green-900/8 blur-[180px]" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-cyan-900/6 blur-[150px]" />
       </div>
@@ -63,7 +63,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display leading-[0.92] tracking-tight mb-6"
+            className="font-display leading-[1.3] tracking-tight mb-6"
             style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', fontWeight: 700 }}
           >
             <span className="text-white block">Shivam</span>
@@ -159,7 +159,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full animated-border spin-slow opacity-70" />
             <div className="absolute inset-3 rounded-full border border-dashed border-green-500/20 spin-slow-rev" />
             <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-[#070b1c] shadow-[0_0_60px_rgba(34,197,94,0.15)] relative z-10">
-              <img src="/portfolio/avatar.jpg" alt="Shivam Varshney"
+              <img src="/shivamvarshney/avatar.jpg" alt="Shivam Varshney"
                 className="w-full h-full object-cover object-center" />
             </div>
           </div>
