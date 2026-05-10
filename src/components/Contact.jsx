@@ -31,9 +31,9 @@ export default function Contact() {
           </p>
           <motion.a
             href="mailto:shivamvarshney565@gmail.com"
-            whileHover={{ scale: 1.03, boxShadow: '0 0 70px rgba(245,158,11,0.35)' }}
+            whileHover={{ scale: 1.03, boxShadow: '0 0 70px rgba(34,197,94,0.3)' }}
             whileTap={{ scale: 0.97 }}
-            className="inline-block px-10 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold text-lg shadow-[0_0_40px_rgba(245,158,11,0.2)] transition-all duration-200"
+            className="inline-block px-10 py-4 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold text-lg shadow-[0_0_40px_rgba(245,158,11,0.2)] transition-all duration-200"
           >
             shivamvarshney565@gmail.com
           </motion.a>
@@ -50,11 +50,11 @@ export default function Contact() {
                 whileHover={{ y: -3 }}
                 className="card-glass flex items-center gap-4 p-4 group"
               >
-                <div className="w-9 h-9 rounded-lg bg-white/[0.05] group-hover:bg-amber-500/15 border border-white/[0.07] group-hover:border-amber-500/30 flex items-center justify-center text-slate-400 group-hover:text-amber-300 transition-all duration-200 shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-white/[0.05] group-hover:bg-green-500/15 border border-white/[0.07] group-hover:border-green-500/30 flex items-center justify-center text-slate-400 group-hover:text-green-400 transition-all duration-200 shrink-0">
                   <Icon size={16} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-white text-sm font-semibold group-hover:text-amber-100 transition-colors">{label}</p>
+                  <p className="text-white text-sm font-semibold group-hover:text-green-400 transition-colors">{label}</p>
                   <p className="text-slate-600 text-xs truncate">{sub}</p>
                 </div>
               </motion.a>

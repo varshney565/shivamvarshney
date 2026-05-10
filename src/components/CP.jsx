@@ -16,7 +16,7 @@ const PLATFORMS = [
     icon: SiCodechef, name: 'CodeChef', rank: '4-Star', rating: '1990',
     meta: 'Top 5%', href: 'https://www.codechef.com/users/shivamloop',
     color: '#d97706', glowClass: 'glow-yellow',
-    badge: 'bg-amber-500/10 text-amber-400 border-amber-500/25',
+    badge: 'bg-green-500/10 text-green-400 border-green-500/30',
     gradientFrom: 'from-amber-500/10', barPct: 66,
     notes: ['Div2 Ranks: #286, #237, #305', 'Div3 Global Rank: #30'],
     size: 'small',
@@ -132,7 +132,7 @@ export default function CP() {
             {HIGHLIGHTS.map(h => (
               <motion.div key={h.event} whileHover={{ y: -4 }} transition={{ duration: 0.2 }}
                 className="card-glass p-6 group">
-                <p className="text-4xl font-extrabold gradient-text mb-3 glow-amber">{h.rank}</p>
+                <p className="text-4xl font-extrabold gradient-text mb-3 glow-green">{h.rank}</p>
                 <p className="text-white text-sm font-semibold leading-snug mb-1">{h.event}</p>
                 <p className="text-slate-600 text-xs group-hover:text-slate-500 transition-colors">{h.total}</p>
               </motion.div>

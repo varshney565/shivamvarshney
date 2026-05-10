@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useScroll, motion } from 'framer-motion'
+import { useScroll, motion, AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -25,26 +25,44 @@ export default function App() {
 
   return (
     <div className="bg-[#050508] text-slate-100 font-sans overflow-x-hidden">
-      {!loaded && <LoadingScreen onDone={() => setLoaded(true)} />}
-      {loaded && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <ScrollProgress />
-          <Navbar />
-          <main>
-            <Hero />
-            <Marquee />
-            <Experience />
-            <CP />
-            <Teaching />
-            <Skills />
-            <Contact />
-          </main>
-        </motion.div>
-      )}
+
+      {/* Loading screen fades out via AnimatePresence exit */}
+      <AnimatePresence>
+        {!loaded && (
+          <motion.div
+            key="boot"
+            className="fixed inset-0 z-[200]"
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: 'easeInOut' }}
+          >
+            <LoadingScreen onDone={() => setLoaded(true)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Portfolio fades in */}
+      <AnimatePresence>
+        {loaded && (
+          <motion.div
+            key="main"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+          >
+            <ScrollProgress />
+            <Navbar />
+            <main>
+              <Hero />
+              <Marquee />
+              <Experience />
+              <CP />
+              <Teaching />
+              <Skills />
+              <Contact />
+            </main>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

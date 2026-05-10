@@ -43,7 +43,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="mailto:shivamvarshney565@gmail.com"
-            className="text-sm px-4 py-2 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 hover:border-amber-400/60 text-amber-300 font-medium transition-all duration-200">
+            className="text-sm px-4 py-2 rounded-lg bg-green-500/15 hover:bg-green-500/25 border border-green-500/30 hover:border-green-500/40 text-green-400 font-medium transition-all duration-200">
             Hire me
           </a>
         </div>

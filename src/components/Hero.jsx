@@ -27,26 +27,25 @@ function Typewriter() {
       setIdx(i => (i + 1) % ROLES.length)
     }
   }, [text, deleting, idx])
-  return <span className="text-amber-300 font-semibold">{text}<span className="cursor-blink" /></span>
+  return <span className="text-green-400 font-semibold">{text}<span className="cursor-blink" /></span>
 }
 
 const BADGES = [
   { label: 'LeetCode Knight', sub: 'Top 3.3%', color: 'border-yellow-500/30 bg-yellow-500/10 text-yellow-300' },
-  { label: 'Antier Solutions', sub: '3+ Years', color: 'border-amber-500/30 bg-amber-500/10 text-amber-300' },
-  { label: 'CodeChef 4-Star', sub: 'Rating 1990', color: 'border-orange-500/30 bg-orange-500/10 text-orange-300' },
+  { label: 'Antier Solutions', sub: '3+ Years', color: 'border-green-500/30 bg-green-500/10 text-green-300' },
+  { label: 'CodeChef 4-Star', sub: 'Rating 1990', color: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300' },
 ]
 
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full bg-amber-700/8 blur-[160px]" />
-        <div className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[600px] rounded-full bg-cyan-700/8 blur-[130px]" />
+        <div className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full bg-green-900/10 blur-[160px]" />
+        <div className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[600px] rounded-full bg-cyan-900/8 blur-[130px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center py-16">
 
-        {/* Left — Text */}
         <div>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -113,11 +112,11 @@ export default function Hero() {
             className="flex flex-wrap gap-3 mb-8"
           >
             <a href="#experience"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(245,158,11,0.25)]">
+              className="px-6 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-semibold text-sm transition-colors shadow-[0_0_30px_rgba(34,197,94,0.2)]">
               View Work ↓
             </a>
             <a href="#contact"
-              className="px-6 py-3 rounded-xl border border-white/[0.12] hover:border-amber-500/40 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200">
+              className="px-6 py-3 rounded-xl border border-white/[0.12] hover:border-green-500/40 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200">
               Get in Touch
             </a>
           </motion.div>
@@ -134,14 +133,14 @@ export default function Hero() {
               { icon: FaEnvelope, href: 'mailto:shivamvarshney565@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                className="w-10 h-10 rounded-lg bg-white/[0.05] hover:bg-amber-500/15 border border-white/[0.08] hover:border-amber-500/40 flex items-center justify-center text-slate-400 hover:text-amber-300 transition-all duration-200">
+                className="w-10 h-10 rounded-lg bg-white/[0.05] hover:bg-green-500/15 border border-white/[0.08] hover:border-green-500/40 flex items-center justify-center text-slate-400 hover:text-green-400 transition-all duration-200">
                 <Icon size={16} />
               </a>
             ))}
           </motion.div>
         </div>
 
-        {/* Right — Avatar + floating badges */}
+        {/* Right — Avatar */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -150,8 +149,8 @@ export default function Hero() {
         >
           <div className="relative w-72 h-72 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full animated-border spin-slow opacity-70" />
-            <div className="absolute inset-3 rounded-full border border-dashed border-amber-500/20 spin-slow-rev" />
-            <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-[#050508] shadow-[0_0_60px_rgba(245,158,11,0.2)] relative z-10">
+            <div className="absolute inset-3 rounded-full border border-dashed border-green-500/20 spin-slow-rev" />
+            <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-[#050508] shadow-[0_0_60px_rgba(34,197,94,0.18)] relative z-10">
               <img src="/portfolio/avatar.jpg" alt="Shivam Varshney"
                 className="w-full h-full object-cover object-center" />
             </div>
