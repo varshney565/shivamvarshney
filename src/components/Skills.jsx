@@ -3,12 +3,6 @@ import { FadeUp } from '../utils/motion'
 
 const GROUPS = [
   {
-    label: 'Teaching',
-    color: 'text-violet-400',
-    bg: 'bg-violet-500/10 border-violet-500/20 text-violet-300',
-    items: ['Machine Learning', 'Python', 'DSA', 'Math for ML', 'System Design', 'C++', 'Competitive Programming'],
-  },
-  {
     label: 'Languages',
     color: 'text-cyan-400',
     bg: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-300',
@@ -16,8 +10,8 @@ const GROUPS = [
   },
   {
     label: 'Core Areas',
-    color: 'text-indigo-400',
-    bg: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-300',
+    color: 'text-amber-400',
+    bg: 'bg-amber-500/10 border-amber-500/20 text-amber-300',
     items: ['Distributed Systems', 'Applied Cryptography', 'Protocol Design', 'Blockchain', 'Algorithms', 'OOP & Design Patterns'],
   },
   {
@@ -33,7 +27,7 @@ export default function Skills() {
     <section id="skills" className="py-28 px-6 bg-white/[0.01]">
       <div className="max-w-5xl mx-auto">
         <FadeUp>
-          <p className="text-xs text-violet-400 font-mono uppercase tracking-widest mb-2">Expertise</p>
+          <p className="section-label">Expertise</p>
           <h2 className="text-4xl font-bold text-white mb-14">Skills</h2>
         </FadeUp>
 
@@ -66,16 +60,25 @@ export default function Skills() {
 
         {/* Education */}
         <FadeUp delay={0.3} className="mt-16">
-          <div className="card-base p-6 flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="text-xs text-slate-600 font-mono uppercase tracking-widest mb-1">Education</p>
-              <p className="text-white font-bold text-lg">UIET, Kurukshetra University</p>
-              <p className="text-slate-400 text-sm mt-0.5">
-                B.Tech — Computer Science & Engineering
-                <span className="ml-2 text-violet-400 font-mono">CGPA 8.23</span>
-              </p>
+          <div className="card-window">
+            <div className="card-window-bar">
+              <div className="window-controls">
+                <span className="window-dot window-dot-red" />
+                <span className="window-dot window-dot-yellow" />
+                <span className="window-dot window-dot-green" />
+              </div>
+              <span className="text-slate-600 ml-1">education.md</span>
+              <span className="ml-auto text-slate-600 font-mono text-[11px]">2019 – 2023</span>
             </div>
-            <p className="text-slate-600 font-mono text-sm">2019 – 2023</p>
+            <div className="p-6 flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <p className="text-white font-bold text-lg">UIET, Kurukshetra University</p>
+                <p className="text-slate-400 text-sm mt-0.5">
+                  B.Tech — Computer Science & Engineering
+                  <span className="ml-2 text-amber-400 font-mono">CGPA 8.23</span>
+                </p>
+              </div>
+            </div>
           </div>
         </FadeUp>
       </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
 
-const ROLES = ['Blockchain Developer', 'CS Educator & Mentor', 'Competitive Programmer', 'Software Engineer']
+const ROLES = ['Blockchain Developer', 'Software Engineer', 'Competitive Programmer', 'Systems Programmer']
 
 function Typewriter() {
   const [idx, setIdx] = useState(0)
@@ -27,21 +27,21 @@ function Typewriter() {
       setIdx(i => (i + 1) % ROLES.length)
     }
   }, [text, deleting, idx])
-  return <span className="text-violet-300 font-semibold">{text}<span className="cursor-blink" /></span>
+  return <span className="text-amber-300 font-semibold">{text}<span className="cursor-blink" /></span>
 }
 
 const BADGES = [
   { label: 'LeetCode Knight', sub: 'Top 3.3%', color: 'border-yellow-500/30 bg-yellow-500/10 text-yellow-300' },
-  { label: 'Antier Solutions', sub: '3+ Years', color: 'border-violet-500/30 bg-violet-500/10 text-violet-300' },
-  { label: 'CodeChef 4-Star', sub: 'Rating 1990', color: 'border-amber-500/30 bg-amber-500/10 text-amber-300' },
+  { label: 'Antier Solutions', sub: '3+ Years', color: 'border-amber-500/30 bg-amber-500/10 text-amber-300' },
+  { label: 'CodeChef 4-Star', sub: 'Rating 1990', color: 'border-orange-500/30 bg-orange-500/10 text-orange-300' },
 ]
 
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full bg-violet-700/10 blur-[140px]" />
-        <div className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[600px] rounded-full bg-indigo-700/8 blur-[120px]" />
+        <div className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full bg-amber-700/8 blur-[160px]" />
+        <div className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[600px] rounded-full bg-cyan-700/8 blur-[130px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center py-16">
@@ -55,7 +55,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-full mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Open to teaching & mentoring roles
+            Software Engineer at Antier Solutions
           </motion.div>
 
           <motion.h1
@@ -81,47 +81,63 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.6 }}
-            className="text-slate-500 text-base leading-relaxed mb-10 max-w-lg"
+            className="text-slate-500 text-base leading-relaxed mb-8 max-w-lg"
           >
-            Building production blockchain infrastructure at Antier Solutions — MPC cryptography,
-            DAG consensus, and cross-chain systems. Teaching ML & algorithms to Georgia Tech OMSCS
-            students. Ranked top 2–3% globally on competitive programming platforms.
+            Specializing in distributed systems and applied cryptography — MPC threshold signing,
+            DAG consensus, and cross-chain protocols shipped to production at scale.
           </motion.p>
+
+          {/* Stats strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="flex items-center gap-10 mb-10 pb-8 border-b border-white/[0.06]"
+          >
+            {[
+              { n: '3+', label: 'Years at Antier' },
+              { n: 'Knight', label: 'LeetCode Rank' },
+              { n: 'Top 3%', label: 'Globally in CP' },
+            ].map(({ n, label }) => (
+              <div key={label}>
+                <p className="stat-num">{n}</p>
+                <p className="text-xs text-slate-600 font-mono mt-0.5 leading-snug">{label}</p>
+              </div>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55 }}
+            transition={{ delay: 0.6 }}
             className="flex flex-wrap gap-3 mb-8"
           >
             <a href="#experience"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(245,158,11,0.25)]">
               View Work ↓
             </a>
             <a href="#contact"
-              className="px-6 py-3 rounded-xl border border-white/[0.12] hover:border-violet-500/40 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200">
+              className="px-6 py-3 rounded-xl border border-white/[0.12] hover:border-amber-500/40 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200">
               Get in Touch
             </a>
           </motion.div>
 
-          {/* Minimal icon-only social — just 3 primary links */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.75 }}
             className="flex items-center gap-4"
           >
             {[
-              { icon: FaGithub, href: 'https://github.com/varshney565' },
-              { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/shivam565/' },
-              { icon: FaEnvelope, href: 'mailto:shivamvarshney565@gmail.com' },
-            ].map(({ icon: Icon, href }) => (
-              <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/[0.05] hover:bg-violet-500/20 border border-white/[0.08] hover:border-violet-500/40 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">
+              { icon: FaGithub, href: 'https://github.com/varshney565', label: 'GitHub' },
+              { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/shivam565/', label: 'LinkedIn' },
+              { icon: FaEnvelope, href: 'mailto:shivamvarshney565@gmail.com', label: 'Email' },
+            ].map(({ icon: Icon, href, label }) => (
+              <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                className="w-10 h-10 rounded-lg bg-white/[0.05] hover:bg-amber-500/15 border border-white/[0.08] hover:border-amber-500/40 flex items-center justify-center text-slate-400 hover:text-amber-300 transition-all duration-200">
                 <Icon size={16} />
               </a>
             ))}
-            <span className="text-slate-700 text-xs font-mono ml-2">More links in Contact ↓</span>
           </motion.div>
         </div>
 
@@ -134,8 +150,8 @@ export default function Hero() {
         >
           <div className="relative w-72 h-72 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full animated-border spin-slow opacity-70" />
-            <div className="absolute inset-3 rounded-full border border-dashed border-violet-500/20 spin-slow-rev" />
-            <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-[#07070d] shadow-[0_0_60px_rgba(139,92,246,0.25)] relative z-10">
+            <div className="absolute inset-3 rounded-full border border-dashed border-amber-500/20 spin-slow-rev" />
+            <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-[#050508] shadow-[0_0_60px_rgba(245,158,11,0.2)] relative z-10">
               <img src="/portfolio/avatar.jpg" alt="Shivam Varshney"
                 className="w-full h-full object-cover object-center" />
             </div>
@@ -157,7 +173,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#07070d] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050508] to-transparent pointer-events-none" />
     </section>
   )
 }

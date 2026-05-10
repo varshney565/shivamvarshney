@@ -132,7 +132,7 @@ export default function CP() {
             {HIGHLIGHTS.map(h => (
               <motion.div key={h.event} whileHover={{ y: -4 }} transition={{ duration: 0.2 }}
                 className="card-glass p-6 group">
-                <p className="text-4xl font-extrabold gradient-text mb-3 glow-violet">{h.rank}</p>
+                <p className="text-4xl font-extrabold gradient-text mb-3 glow-amber">{h.rank}</p>
                 <p className="text-white text-sm font-semibold leading-snug mb-1">{h.event}</p>
                 <p className="text-slate-600 text-xs group-hover:text-slate-500 transition-colors">{h.total}</p>
               </motion.div>

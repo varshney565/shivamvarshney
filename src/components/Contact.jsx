@@ -15,9 +15,8 @@ const ALL_LINKS = [
 export default function Contact() {
   return (
     <section id="contact" className="py-28 px-6 relative overflow-hidden">
-      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-violet-700/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-700/8 blur-[130px] rounded-full" />
       </div>
 
       <div className="relative max-w-5xl mx-auto">
@@ -28,19 +27,18 @@ export default function Contact() {
             <span className="gradient-text">opportunities.</span>
           </h2>
           <p className="text-slate-500 text-lg mb-10 max-w-md mx-auto">
-            Teaching roles, mentorship, or interesting engineering problems — reach out.
+            Interesting engineering problems, collaborations, or just a good technical conversation — reach out.
           </p>
           <motion.a
             href="mailto:shivamvarshney565@gmail.com"
-            whileHover={{ scale: 1.03, boxShadow: '0 0 70px rgba(139,92,246,0.4)' }}
+            whileHover={{ scale: 1.03, boxShadow: '0 0 70px rgba(245,158,11,0.35)' }}
             whileTap={{ scale: 0.97 }}
-            className="inline-block px-10 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-lg shadow-[0_0_40px_rgba(139,92,246,0.25)] transition-all duration-200"
+            className="inline-block px-10 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold text-lg shadow-[0_0_40px_rgba(245,158,11,0.2)] transition-all duration-200"
           >
             shivamvarshney565@gmail.com
           </motion.a>
         </FadeUp>
 
-        {/* All links in one place */}
         <FadeUp delay={0.15}>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {ALL_LINKS.map(({ icon: Icon, label, href, sub }) => (
@@ -50,13 +48,13 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
-                className="card-base flex items-center gap-4 p-4"
+                className="card-glass flex items-center gap-4 p-4 group"
               >
-                <div className="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-slate-400 shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-white/[0.05] group-hover:bg-amber-500/15 border border-white/[0.07] group-hover:border-amber-500/30 flex items-center justify-center text-slate-400 group-hover:text-amber-300 transition-all duration-200 shrink-0">
                   <Icon size={16} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-white text-sm font-semibold">{label}</p>
+                  <p className="text-white text-sm font-semibold group-hover:text-amber-100 transition-colors">{label}</p>
                   <p className="text-slate-600 text-xs truncate">{sub}</p>
                 </div>
               </motion.a>

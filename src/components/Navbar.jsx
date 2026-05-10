@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const LINKS = [
   { label: 'Experience', href: '#experience' },
   { label: 'Achievements', href: '#cp' },
-  { label: 'Teaching', href: '#teaching' },
+  { label: 'Leadership', href: '#teaching' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -29,9 +29,10 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="text-lg font-bold tracking-tight">
-          <span className="gradient-text">Shivam</span>
-          <span className="text-white/40">.</span>
+        <a href="#hero" className="font-mono text-sm font-bold tracking-tight text-slate-300 hover:text-white transition-colors">
+          <span className="text-slate-600">&lt;</span>
+          <span className="gradient-text">SV</span>
+          <span className="text-slate-600"> /&gt;</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -42,7 +43,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="mailto:shivamvarshney565@gmail.com"
-            className="text-sm px-4 py-2 rounded-lg bg-violet-600/20 hover:bg-violet-600/30 border border-violet-500/30 hover:border-violet-400/50 text-violet-300 font-medium transition-all duration-200">
+            className="text-sm px-4 py-2 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 hover:border-amber-400/60 text-amber-300 font-medium transition-all duration-200">
             Hire me
           </a>
         </div>
